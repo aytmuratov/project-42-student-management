@@ -1,18 +1,17 @@
 # Student Management System
 
-A CRUD-based student management system with statistics dashboard.
+A Flask web application for managing student records with search functionality.
 
 ## Features
+- Add, edit, and delete students
+- Search students by name, email, or grade
+- Dashboard with statistics
+- View all students in a table
 
-- Add, edit, delete student records
-- Fields: Name, Student ID, Email, Major, GPA
-- Search by name, ID, or email
-- Sort by GPA, name, or ID
-- Statistics dashboard (total, average GPA, majors, highest GPA)
-- Color-coded GPA badges
-- Data persistence with localStorage
-- Responsive design
+## Setup
+```bash
+pip install -r requirements.txt
+python app.py
+```
 
-## Usage
-
-Open `index.html` in a browser.
+Visit http://localhost:5000
