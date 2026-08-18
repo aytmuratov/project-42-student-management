@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Management System</h1>
+            <p class="subtitle">Manage student records efficiently</p>
+        </header>
+
+        <div class="stats-dashboard">
+            <div class="stat-card">
+                <div class="stat-value" id="totalStudents">0</div>
+                <div class="stat-label">Total Students</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="avgGpa">0.00</div>
+                <div class="stat-label">Average GPA</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalMajors">0</div>
+                <div class="stat-label">Majors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="highestGpa">0.00</div>
+                <div class="stat-label">Highest GPA</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h2 id="formTitle">Add Student</h2>
+                <form id="studentForm">
+                    <input type="hidden" id="studentId">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentIdInput">Student ID</label>
+                            <input type="text" id="studentIdInput" placeholder="STU001" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="john@university.edu" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="major">Major</label>
+                            <select id="major" required>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Mathematics">Mathematics</option>
+                                <option value="Physics">Physics</option>
+                                <option value="Biology">Biology</option>
+                                <option value="Chemistry">Chemistry</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Business">Business</option>
+                                <option value="Arts">Arts</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gpa">GPA (0.0 - 4.0)</label>
+                        <input type="number" id="gpa" step="0.01" min="0" max="4" placeholder="3.50" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-primary" id="submitBtn">Add Student</button>
+                        <button type="button" class="btn-secondary" id="cancelBtn" style="display:none;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-section">
+                <h2>Student Records</h2>
+                <div class="controls">
+                    <input type="text" id="searchInput" placeholder="Search by name, ID, or email...">
+                    <select id="sortField">
+                        <option value="name">Sort by Name</option>
+                        <option value="gpa">Sort by GPA</option>
+                        <option value="studentId">Sort by ID</option>
+                    </select>
+                    <select id="sortOrder">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+                </div>
+                <div class="table-wrapper">
+                    <table id="studentTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Student ID</th>
+                                <th>Email</th>
+                                <th>Major</th>
+                                <th>GPA</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody"></tbody>
+                    </table>
+                </div>
+                <div id="noResults" class="no-results" style="display:none;">No students found</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
